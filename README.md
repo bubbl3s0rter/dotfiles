@@ -1,4 +1,7 @@
 # dotfiles
+
+https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/
+
 Overview of storing dotfiles in a Git repository
 Set a Git repository’s work tree to $HOME
 git add and commit your dotfiles to the Git repository. The dotfiles remain at their original paths.
