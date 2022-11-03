@@ -1,0 +1,2 @@
+#!/bin/bash
+uptime | tr -d ' ' | awk -F'( |,|:)+' '{print $6,":",$7}'
