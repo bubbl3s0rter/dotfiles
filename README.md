@@ -16,11 +16,11 @@ Note that the only two differences between using a bare and non-bare repository 
 presence of the  --bare flag when initialising and cloning the repo
 the path to the Git directory,  $HOME/.cfg/ for bare and $HOME/.cfg/.git/ for non-bare.
 Storing your dotfiles using a non-bare, default repository:
-1. git init $HOME/.dotfiles
-2. alias gitdot='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'
-3. echo "alias gitdot='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'" >> $HOME/.bash_aliases
-4. gitdot config --local status.showUntrackedFiles no
-5. gitdot add .tmux.config + gitdot commit -m "add .tmux.config" + Set up a remote repository on GitHub or your Git server of choice + config push
+1. git init --bare $HOME/.dotfiles.git
+2. alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
+3. echo "alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'" >> $HOME/.bash_aliases
+4. dotgit config --local status.showUntrackedFiles no
+5. dotgit add .tmux.config + gitdot commit -m "add .tmux.config" + Set up a remote repository on GitHub or your Git server of choice + config push
 
 <!---
 Installing:
@@ -37,11 +37,13 @@ Installing:
 --->
  
 Installing:
-1. echo ".dotfiles" >> .gitignore
-2. git clone --bare <remote-git-repo-url> $HOME/.dotfiles
-3. alias gitdot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-4. gitdot config --local status.showUntrackedFiles no
-5. gitdot checkoutNow for the line by line breakdown. But first . . .
+1. echo ".dotfiles.git" >> .gitignore
+2. git clone --bare <remote-git-repo-url> $HOME/.dotfiles.git
+3. alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
+4. dotgit config --local status.showUntrackedFiles no
+5. dotgit checkout
+ 
+Now for the line by line breakdown. But first . . .
 
 ## Prerequisite knowledge
 Two concepts should be crystal clear: the Git repository and the work tree.  Skip ahead if you’re already comfortable with these.
