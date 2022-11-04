@@ -16,14 +16,15 @@ Note that the only two differences between using a bare and non-bare repository 
 presence of the  --bare flag when initialising and cloning the repo
 the path to the Git directory,  $HOME/.cfg/ for bare and $HOME/.cfg/.git/ for non-bare.
 Storing your dotfiles using a non-bare, default repository:
-1. git init $HOME/.cfg
-2. alias config='/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME'
-3. echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME'" >> $HOME/.zsh/aliases
-4. config config --local status.showUntrackedFiles no
-5. config add .vimrc + config commit -m "add .vimrc" + Set up a remote repository on GitHub or your Git server of choice + config push
+1. git init $HOME/.dotfiles
+2. alias gitdot='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'
+3. echo "alias gitdot='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'" >> $HOME/.bash_aliases
+4. gitdot config --local status.showUntrackedFiles no
+5. gitdot add .tmux.config + gitdot commit -m "add .tmux.config" + Set up a remote repository on GitHub or your Git server of choice + config push
 
+<!---
 Installing:
-1. echo ".cfg" >> .gitignore
+1. echo "." >> .gitignore
 2. git clone <remote-git-repo-url> $HOME/.cfg
 3. alias config='/usr/bin/git --git-dir=$HOME/.cfg/.git --work-tree=$HOME'
 4. config config --local status.showUntrackedFiles no
@@ -33,14 +34,16 @@ Installing:
 3. echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.zsh/aliases
 4. config config --local status.showUntrackedFiles no
 5. config add .vimrc + config commit -m "add .vimrc" + set up a remote repository on GitHub or your Git server of choice + config push
-
+--->
+ 
 Installing:
-1. echo ".cfg" >> .gitignore
-2. git clone --bare <remote-git-repo-url> $HOME/.cfg
-3. alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-4. config config --local status.showUntrackedFiles no
-5. config checkoutNow for the line by line breakdown. But first . . .
-Prerequisite knowledge
+1. echo ".dotfiles" >> .gitignore
+2. git clone --bare <remote-git-repo-url> $HOME/.dotfiles
+3. alias gitdot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+4. gitdot config --local status.showUntrackedFiles no
+5. gitdot checkoutNow for the line by line breakdown. But first . . .
+
+## Prerequisite knowledge
 Two concepts should be crystal clear: the Git repository and the work tree.  Skip ahead if you’re already comfortable with these.
 
 I like this definition of repository aka repo [2]:
