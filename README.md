@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# dotfiles
-=======
 # Workstation State & Dotfiles
 
 Systematic configuration management for a hybrid Windows 11 (Host) and NixOS (WSL2/Remote) environment.
