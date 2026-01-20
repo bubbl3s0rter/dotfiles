@@ -1,0 +1,19 @@
+add_newline = false
+format = """$aws$docker_context$directory$character"""
+
+[aws]
+symbol = " "
+style = "bold yellow"
+format = "[$symbol($profile)]($style) "
+
+[docker_context]
+symbol = " "
+style = "bold blue"
+format = "[$symbol($context)]($style) "
+
+[directory]
+style = "bold white"
+read_only = " 🔒"
+
+[character]
+success_symbol = "[➜](bold green)"

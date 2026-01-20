@@ -1,0 +1,1 @@
+DOSKEY ls=dir /w

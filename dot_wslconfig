@@ -1,0 +1,7 @@
+[wsl2]
+# Optimized for 16GB RAM / Ryzen 5 Pro
+memory=8GB
+processors=4
+swap=4GB
+networkingMode=mirrored
+dnsTunneling=true
