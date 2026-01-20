@@ -37,4 +37,3 @@ Optimized for 16GB Host RAM:
 - Processors: 4
 - Networking: Mirrored
 - DNS Tunneling: Enabled
->>>>>>> 2cf87eb (Add documentation for hardware and architecture)
